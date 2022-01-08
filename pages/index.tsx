@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Nav from '../components/Nav'
 
 export default function Home() {
   return (
@@ -8,7 +7,6 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         Coucou
       </main>
