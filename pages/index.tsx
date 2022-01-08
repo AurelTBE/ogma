@@ -7,10 +7,13 @@ export default function Home() {
         <title>Text To Speech - Accueil</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        Accueil
+      <main className="flex flex-row items-center justify-center w-full flex-1 px-20 text-center">
+        <div className="flex flex-1 items-center justify-center contentglass">
+          <div className="flex text-stone-800 p-60 text-2xl">
+            Accueil
+          </div>
+        </div>
       </main>
-
       <footer className="flex items-center justify-center w-full h-24 border-t">
         <a
           className="flex items-center justify-center"
