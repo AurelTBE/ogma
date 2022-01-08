@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
+import Link from 'next/link'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,27 +19,28 @@ function Nav() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
+                <Link href="/">
                   <a
-                    href="#"
                     className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Home
+                    Accueil
                   </a>
-
+                  </Link>
+                  <Link href="/actus">
                   <a
-                    href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Team
+                    Actus
                   </a>
-
+                  </Link>
+                  <Link href="/">
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Projects
                   </a>
-
+                  </Link>
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
