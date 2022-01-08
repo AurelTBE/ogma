@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
 import Link from 'next/link'
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 function Nav() {
   return (

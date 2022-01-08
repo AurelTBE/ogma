@@ -1,6 +1,7 @@
 import React from 'react'
-import Assistant from './Assistant'
+import 'regenerator-runtime/runtime'
 import Nav from './Nav'
+import Assistant from './Assistant';
 
 interface Props {
     

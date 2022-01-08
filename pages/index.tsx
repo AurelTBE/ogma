@@ -1,6 +1,10 @@
 import Head from 'next/head'
+import { useContext } from "react"
+import { State } from "../context/State"
 
 export default function Home() {
+  const { transcript }: any = useContext(State)
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -8,9 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-row items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="flex flex-1 items-center justify-center contentglass">
-          <div className="flex text-stone-800 p-60 text-2xl">
+        <div className="flex flex-col flex-1 col-span-full items-center justify-center contentglass">
+          <div className="flex text-stone-800 p-10 text-2xl">
             Accueil
+          </div>
+          <div className="flex flex-row flex-1 pb-10">
+            Transcription : {transcript}
           </div>
         </div>
       </main>
