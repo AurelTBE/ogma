@@ -14,7 +14,7 @@ const Assistant = (props: Props) => {
     const { handleTranscript, handleUrl }: any = useContext(State)
     const commands = [
         {
-            command: ["va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Sélection *"],
+            command: ["va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Sélection *"],
             callback: (redirectPage: any) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
