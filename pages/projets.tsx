@@ -17,7 +17,9 @@ export default function Home() {
           <div className="flex text-red-600 p-20 text-2xl">
             Projets
           </div>
-          <ProjetsPic />
+          <div className="flex max-w-[275px]">
+            <ProjetsPic />
+          </div>
           <div className="flex flex-row flex-1 py-20">
             Transcription : {transcript}
           </div>

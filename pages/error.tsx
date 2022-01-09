@@ -17,7 +17,9 @@ export default function Home() {
           <div className="flex text-stone-800 p-20 text-2xl">
            Page Introuvable
           </div>
-          <ErrorPic />
+          <div className="flex max-w-[275px]">
+            <ErrorPic />
+          </div>
           <div className="flex flex-row flex-1 py-20">
             Impossible de trouver la page "{commandUrl}"
           </div>
