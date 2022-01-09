@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useContext } from "react"
 import { State } from "../context/State"
+import HomePic from '../assets/HomePic'
 
 export default function Home() {
   const { transcript }: any = useContext(State)
@@ -13,10 +14,11 @@ export default function Home() {
       </Head>
       <main className="flex flex-row items-center justify-center w-full flex-1 px-20 text-center">
         <div className="flex flex-col flex-1 col-span-full items-center justify-center contentglass">
-          <div className="flex text-stone-800 p-10 text-2xl">
+          <div className="flex text-stone-800 p-20 text-2xl">
             Accueil
           </div>
-          <div className="flex flex-row flex-1 pb-10">
+          <HomePic />
+          <div className="flex flex-row flex-1 py-20">
             Transcription : {transcript}
           </div>
         </div>

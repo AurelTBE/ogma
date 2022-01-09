@@ -1,25 +1,25 @@
 import Head from 'next/head'
 import { useContext } from "react"
-import ActuPic from '../assets/ActuPic'
+import ErrorPic from '../assets/ErrorPic'
 import { State } from "../context/State"
 
 export default function Home() {
-    const { transcript }: any = useContext(State)
+    const { commandUrl }: any = useContext(State)
 
     return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
-        <title>Text To Speech - Actus</title>
+        <title>Text To Speech - Erreur</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-row items-center justify-center w-full flex-1 px-20 text-center">
         <div className="flex flex-col flex-1 col-span-full items-center justify-center contentglass">
-          <div className="flex text-cyan-600 p-20 text-2xl">
-            Actus
+          <div className="flex text-stone-800 p-20 text-2xl">
+           Page Introuvable
           </div>
-          <ActuPic />
+          <ErrorPic />
           <div className="flex flex-row flex-1 py-20">
-            Transcription : {transcript}
+            Impossible de trouver la page "{commandUrl}"
           </div>
         </div>
       </main>
