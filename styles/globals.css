@@ -93,3 +93,11 @@
     -webkit-box-shadow: inset 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
     box-shadow: inset 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
 }
+
+.hoverneue:hover {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: #ecf3f3;
+    -webkit-box-shadow: inset 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+    box-shadow: inset 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+}
