@@ -15,7 +15,7 @@ const Footer = (props: Props) => {
                     rel="noopener noreferrer"
                 >
                     Créé par Aurélien T.
-                    <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+                    <img src="/ogma.svg" alt="Vercel Logo" className="h-4 ml-2" />
                 </a>
             </div>
 

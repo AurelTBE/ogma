@@ -14,7 +14,7 @@ const Assistant = (props: Props) => {
     const { handleTranscript, handleUrl }: any = useContext(State)
     const commands = [
         {
-            command: ["va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Go sur *"],
+            command: ["va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Sélection *"],
             callback: (redirectPage: any) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
@@ -35,11 +35,12 @@ const Assistant = (props: Props) => {
     ]
     const { transcript } = useSpeechRecognition({commands})
 
-    const pages = ["accueil", "Accueil", "actus", "actu", "projets", "projet"]
+    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "projets", "projet"]
 
     const urls: {[key: string]: string} = {
         accueil: "/",
         Accueil: "/",
+        "l'accueil": "/",
         actus: "/actus",
         actu: "/actus",
         projets: "/projets",
