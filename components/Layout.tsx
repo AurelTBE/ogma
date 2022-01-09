@@ -3,6 +3,10 @@ import dynamic from "next/dynamic";
 import 'regenerator-runtime/runtime'
 import Nav from './Nav'
 import Assistant from './Assistant';
+import Footer from './Footer';
+import HeadApp from './HeadApp';
+
+
 const VoiceSynth = dynamic(
     () => {
       return import("../utils/VoiceSynth");
@@ -16,12 +20,14 @@ interface Props {
 
 const Layout = ({ children }: any) => {
     return (
-        <div className="mainbg w-full h-screen">
-            <Nav />
-            <Assistant />
-            <VoiceSynth />
-            {children}
-        </div>
+      <div className="neuebg">
+        <HeadApp />
+        <Nav />
+        <Assistant />
+        <VoiceSynth />
+        {children}
+        <Footer />
+      </div>
     )
 }
 

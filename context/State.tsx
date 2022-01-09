@@ -4,15 +4,22 @@ interface ContextState {
     transcript: string,
     handleTranscript: any,
     commandUrl: string, 
-    handleUrl: any
+    handleUrl: any,
+    activePage: string,
+    handleActivePage: any
 }
 
 export const State = createContext({} as ContextState)
 
 
 export const StateProvider = ({children}: any) => {
+    const [activePage, setActivePage] = useState<string>("")
     const [transcript, setTranscript] = useState<string>("")
     const [commandUrl, setCommandUrl] = useState<string>("")
+
+    const handleActivePage = (currentPage: string) => {
+        setActivePage(currentPage)
+    }
 
     const handleTranscript = (speech: string) => {
         setTranscript(speech)
@@ -23,7 +30,7 @@ export const StateProvider = ({children}: any) => {
     }
 
     return (
-        <State.Provider value={{ transcript, handleTranscript, commandUrl, handleUrl }}>
+        <State.Provider value={{ transcript, handleTranscript, commandUrl, handleUrl, activePage, handleActivePage }}>
             {children}
         </State.Provider>
     )

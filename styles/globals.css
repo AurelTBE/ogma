@@ -50,3 +50,38 @@
 .z-999 {
     z-index: 999
 }
+
+.neue {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: #ecf3f3;
+    -webkit-box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+    box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+}
+
+.neuebg {
+    background: #ecf3f3;
+}
+
+.neuenav {
+    background: #ecf3f3;
+    -webkit-box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+    box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+}
+
+.btnneue {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: #ecf3f3;
+    -webkit-box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+    box-shadow: 12px 12px 24px #c9cfcf, -12px -12px 24px #ffffff;
+}
+
+.btnneue:hover {
+    background: rgba( 255, 255, 255, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
