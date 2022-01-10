@@ -9,7 +9,7 @@ function Nav() {
     <div className="flex">
       <nav className="flex w-full py-5 pl-4 neuenav">
         <Link href="/">
-          <img src="/ogma.svg" alt="Vercel Logo" className="mx-3 sm:mx-6 w-11" />
+          <img src="/ogma.svg" alt="Ogma Logo" className="mx-3 sm:mx-6 w-11" />
         </Link>
         <Link href="/">
           <a

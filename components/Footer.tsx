@@ -10,12 +10,12 @@ const Footer = (props: Props) => {
             <div className="flex p-10 m-5 neue">
                 <a
                     className="flex items-center justify-center"
-                    href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                    href="/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Créé par Aurélien T.
-                    <img src="/ogma.svg" alt="Vercel Logo" className="h-4 ml-2" />
+                    <img src="/ogma.svg" alt="Ogma Logo" className="h-4 ml-2" />
                 </a>
             </div>
 
