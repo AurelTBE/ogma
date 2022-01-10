@@ -7,7 +7,7 @@ export default function Home() {
   useEffect(() => {
     handleActivePage("Accueil")
   }, [])
-  
+
   return (
     <div className="flex flex-col items-center justify-center">
       <main className="flex flex-row justify-center w-full px-5 pt-12 text-center">
@@ -17,7 +17,7 @@ export default function Home() {
           </div>
           <img src="/home.svg" alt="Accueil" className="w-[50vw]" />
           <div className="flex flex-row flex-1 py-20">
-            Transcription : {transcript}
+            {transcript && `Transcription : ${transcript}`}
           </div>
         </div>
       </main>

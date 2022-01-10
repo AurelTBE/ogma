@@ -11,7 +11,7 @@ const HeadApp = (props: Props) => {
     const { activePage }: any = useContext(State)
     return (
         <Head>
-            <title>Text To Speech - {activePage}</title>
+            <title>Ogma - {activePage}</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
     )

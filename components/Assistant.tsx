@@ -11,10 +11,12 @@ interface Props {
 const Assistant = (props: Props) => {
     const router = useRouter()
     const [redirectUrl, setredirectUrl] = useState("")
-    const { handleTranscript, handleUrl }: any = useContext(State)
+    const { handleTranscript, handleUrl, landing }: any = useContext(State)
+    const [textToRead, setTextToRead] = useState(landing ? `Bonjour, je suis Ogma, je peux t'aider à naviguer sur ce site. Demande moi de naviguer sur une page.` : '');
+
     const commands = [
         {
-            command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Sélection *"],
+            command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Navigue sur *", "Navigue vers *", "Navigue à *", "Sélection *"],
             callback: (redirectPage: any) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
@@ -35,7 +37,7 @@ const Assistant = (props: Props) => {
     ]
     const { transcript } = useSpeechRecognition({commands})
 
-    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "projets", "projet"]
+    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "Actu", "projets", "projet", "stop"]
 
     const urls: {[key: string]: string} = {
         accueil: "/",
@@ -43,8 +45,10 @@ const Assistant = (props: Props) => {
         "l'accueil": "/",
         actus: "/actus",
         actu: "/actus",
+        Actu: "/actus",
         projets: "/projets",
         projet: "/projets",
+        stop: "#"
     }
 
     if(!SpeechRecognition.browserSupportsSpeechRecognition) {
@@ -54,17 +58,25 @@ const Assistant = (props: Props) => {
     if(redirectUrl) {
         if(pages.includes(redirectUrl)) {
             router.push(urls[redirectUrl])
+            handleTranscript("")
             setredirectUrl("")
         } else {
             router.push("/error")
+            handleTranscript("")
             setredirectUrl("")
         }
     }
 
-    const handleListening = () => {
-        SpeechRecognition.startListening({ continuous: true })
-    }
+    const synth = window.speechSynthesis;
+    const voices = synth.getVoices()
+    const dial = new SpeechSynthesisUtterance(textToRead);
+    dial.voice = voices[2]
 
+    const handleAssistant = async () => {
+        SpeechRecognition.stopListening()
+        synth.speak(dial)
+        dial.onend = () => SpeechRecognition.startListening({ continuous: true })
+    }
 
     useEffect(() => {
         handleTranscript(transcript)
@@ -74,7 +86,7 @@ const Assistant = (props: Props) => {
     return (
         <>      
             <div className="fixed bottom-0 right-0 p-5 z-999 rounded m-2 btnglass hover:cursor-pointer text-gray-900 hover:text-gray-700">
-                <button onClick={handleListening}>
+                <button onClick={handleAssistant}>
                     <div className="flex items-center justify-center">
                         <img src="/ogma.svg" alt="Ogma" className="w-[30vw] sm:w-32 p-6" />
                         <div className="flex">

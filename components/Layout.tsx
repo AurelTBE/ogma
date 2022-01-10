@@ -2,17 +2,17 @@ import React from 'react'
 import dynamic from "next/dynamic";
 import 'regenerator-runtime/runtime'
 import Nav from './Nav'
-import Assistant from './Assistant';
 import Footer from './Footer';
 import HeadApp from './HeadApp';
 
+const Assistant = dynamic(() => import('./Assistant'), {
+  ssr: false
+})
 
-const VoiceSynth = dynamic(
-    () => {
-      return import("../utils/VoiceSynth");
-    },
-    { ssr: false }
-  );
+//import Reader from '../utils/Reader'
+const Reader = dynamic(() => import('../utils/Reader'), {
+  ssr: false
+})
   
 interface Props {
     
@@ -24,7 +24,7 @@ const Layout = ({ children }: any) => {
         <HeadApp />
         <Nav />
         <Assistant />
-        <VoiceSynth />
+        <Reader />
         {children}
         <Footer />
       </div>

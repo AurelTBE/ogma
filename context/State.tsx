@@ -6,7 +6,9 @@ interface ContextState {
     commandUrl: string, 
     handleUrl: any,
     activePage: string,
-    handleActivePage: any
+    handleActivePage: any,
+    landing: boolean,
+    handleLanding: any
 }
 
 export const State = createContext({} as ContextState)
@@ -16,6 +18,7 @@ export const StateProvider = ({children}: any) => {
     const [activePage, setActivePage] = useState<string>("")
     const [transcript, setTranscript] = useState<string>("")
     const [commandUrl, setCommandUrl] = useState<string>("")
+    const [landing, setLanding] = useState<boolean>(true)
 
     const handleActivePage = (currentPage: string) => {
         setActivePage(currentPage)
@@ -29,8 +32,12 @@ export const StateProvider = ({children}: any) => {
         setCommandUrl(voiceurl)
     }
 
+    const handleLanding = (landstatus: boolean) => {
+        setLanding(landstatus)
+    }
+
     return (
-        <State.Provider value={{ transcript, handleTranscript, commandUrl, handleUrl, activePage, handleActivePage }}>
+        <State.Provider value={{ transcript, handleTranscript, commandUrl, handleUrl, activePage, handleActivePage, landing, handleLanding }}>
             {children}
         </State.Provider>
     )

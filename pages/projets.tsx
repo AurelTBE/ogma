@@ -17,7 +17,7 @@ export default function Home() {
           </div>
           <img src="/projects.svg" alt="Projets" className="w-[50vw]" />
           <div className="flex flex-row flex-1 py-20">
-            Transcription : {transcript}
+            {transcript && `Transcription : ${transcript}`}
           </div>
         </div>
       </main>
