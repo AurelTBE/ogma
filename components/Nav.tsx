@@ -7,7 +7,10 @@ function Nav() {
   
   return (
     <div className="flex">
-      <nav className="w-full neuenav py-5 pl-4">
+      <nav className="flex w-full py-5 pl-4 neuenav">
+        <Link href="/">
+          <img src="/ogma.svg" alt="Vercel Logo" className="mx-3 sm:mx-6 w-11" />
+        </Link>
         <Link href="/">
           <a
             className={`${activePage == "Accueil" && "activeneue" } text-stone-800 hoverneue px-3 mx-3 py-2 rounded-md text-sm font-medium`}

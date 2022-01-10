@@ -6,8 +6,8 @@ interface Props {
 
 const Footer = (props: Props) => {
     return (
-        <footer className="flex items-center justify-center w-full my-10">
-            <div className="flex neue p-10 m-5">
+        <footer className="flex items-center justify-center w-full py-10">
+            <div className="flex p-10 m-5 neue">
                 <a
                     className="flex items-center justify-center"
                     href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
