@@ -4,6 +4,5 @@ This project showcases how to implement a 2 ways voice assistant (voice commands
 
 ## Preview
 
-Preview the example live here : [Ogma](https://ogma-blue.vercel.app/):
-
-[![Ogma](https://ogma-blue.vercel.app/ogma.svg)](https://ogma-blue.vercel.app/)
+Preview the example live here : 
+[Ogma](https://ogma-blue.vercel.app/)
