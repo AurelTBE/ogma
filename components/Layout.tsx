@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactChildren } from 'react'
 import dynamic from "next/dynamic";
 import 'regenerator-runtime/runtime'
 import Nav from './Nav'
@@ -9,16 +9,11 @@ const Assistant = dynamic(() => import('./Assistant'), {
   ssr: false
 })
 
-//import Reader from '../utils/Reader'
 const Reader = dynamic(() => import('../utils/Reader'), {
   ssr: false
 })
-  
-interface Props {
-    
-}
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children }: {children:ReactChildren}) => {
     return (
       <div className="neuebg">
         <HeadApp />

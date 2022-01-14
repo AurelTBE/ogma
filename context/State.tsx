@@ -1,20 +1,20 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, ReactChildren, useState } from 'react'
 
 interface ContextState {
     transcript: string,
-    handleTranscript: any,
+    handleTranscript: (transc:string) => void,
     commandUrl: string, 
-    handleUrl: any,
+    handleUrl: (url:string) => void,
     activePage: string,
-    handleActivePage: any,
+    handleActivePage: (page:string) => void,
     landing: boolean,
-    handleLanding: any
+    handleLanding: (land:boolean) => void
 }
 
 export const State = createContext({} as ContextState)
 
 
-export const StateProvider = ({children}: any) => {
+export const StateProvider = ({children}: {children:ReactChildren}) => {
     const [activePage, setActivePage] = useState<string>("")
     const [transcript, setTranscript] = useState<string>("")
     const [commandUrl, setCommandUrl] = useState<string>("")

@@ -3,12 +3,8 @@ import Head from 'next/head'
 import { useContext } from "react"
 import { State } from "../context/State"
 
-interface Props {
-    
-}
-
-const HeadApp = (props: Props) => {
-    const { activePage }: any = useContext(State)
+const HeadApp = () => {
+    const { activePage }: {activePage:string} = useContext(State)
     return (
         <Head>
             <title>Ogma - {activePage}</title>

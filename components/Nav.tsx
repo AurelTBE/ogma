@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { State } from "../context/State"
 
 function Nav() {
-  const { activePage }: any = useContext(State)
+  const { activePage }: {activePage:string} = useContext(State)
   
   return (
     <div className="flex">
       <nav className="flex w-full py-5 pl-4 neuenav">
         <Link href="/">
-          <img src="/ogma.svg" alt="Ogma Logo" className="mx-3 sm:mx-6 w-11 cursor-pointer" />
+          <img src="/ogma.svg" alt="Ogma Logo" className="mx-3 cursor-pointer sm:mx-6 w-11" />
         </Link>
         <Link href="/">
           <a

@@ -1,10 +1,6 @@
 import React from 'react'
 
-interface Props {
-    
-}
-
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <footer className="flex items-center justify-center w-full py-10">
             <div className="flex p-10 m-5 neue">

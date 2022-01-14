@@ -4,20 +4,25 @@ import { useContext } from "react"
 import { State } from "../context/State"
 import { useRouter } from 'next/router'
 
-interface Props {
-    
+interface IProps {
+    handleTranscript: (transc:string) => void
+    handleUrl: (url:string) => void
+    landing: boolean
 }
 
-const Assistant = (props: Props) => {
+const Assistant = () => {
     const router = useRouter()
     const [redirectUrl, setredirectUrl] = useState("")
-    const { handleTranscript, handleUrl, landing }: any = useContext(State)
+    const { handleTranscript, handleUrl, landing }: IProps = useContext(State)
     const [textToRead, setTextToRead] = useState(landing ? `Bonjour, je suis Ogma, je peux t'aider à naviguer sur ce site. Demande moi de naviguer sur une page.` : '');
 
     const commands = [
         {
-            command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", "Clic *", "Sélectionner *", "Sélectionne *", "Navigue sur *", "Navigue vers *", "Navigue à *", "Sélection *"],
-            callback: (redirectPage: any) => (
+            command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", 
+            "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", 
+            "Clic *", "Sélectionner *", "Sélectionne *", "Navigue sur *", "Navigue vers *", "Navigue à *", "Sélection *", 
+            "Montre moi *", "Montre moi les *"],
+            callback: (redirectPage: string) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
             )
@@ -32,12 +37,12 @@ const Assistant = (props: Props) => {
         },
         {
             command: 'effacer',
-            callback: ({ resetTranscript }: any) => resetTranscript()
+            callback: ({ resetTranscript }: {resetTranscript: () => void}) => resetTranscript()
         }
     ]
     const { transcript } = useSpeechRecognition({commands})
 
-    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "Actu", "projets", "projet", "stop"]
+    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "Actu", "actualité", "actualités", "projets", "projet", "stop"]
 
     const urls: {[key: string]: string} = {
         accueil: "/",
@@ -46,6 +51,8 @@ const Assistant = (props: Props) => {
         actus: "/actus",
         actu: "/actus",
         Actu: "/actus",
+        actualité: "/actus",
+        actualités: "/actus",
         projets: "/projets",
         projet: "/projets",
         stop: "#"
@@ -85,7 +92,7 @@ const Assistant = (props: Props) => {
 
     return (
         <>      
-            <div className="fixed bottom-0 right-0 p-5 z-999 rounded m-2 btnglass hover:cursor-pointer text-gray-900 hover:text-gray-700">
+            <div className="fixed bottom-0 right-0 p-5 m-2 text-gray-900 rounded z-999 btnglass hover:cursor-pointer hover:text-gray-700">
                 <button onClick={handleAssistant}>
                     <div className="flex items-center justify-center">
                         <img src="/ogma.svg" alt="Ogma" className="w-[30vw] sm:w-32 p-6" />

@@ -2,12 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { useContext } from "react"
 import { State } from "../context/State"
 
-interface Props {
-    
-}
+interface IProps {
+    landing: boolean, 
+    handleLanding: (land: boolean) => void
+  }
 
-const Reader = (props: Props) => {
-    const { landing, handleLanding }: any = useContext(State)
+const Reader = () => {
+    const { landing, handleLanding }: IProps = useContext(State)
     const [textToRead, setTextToRead] = useState(landing ? `Bonjour, je suis Ogma, je peux t'aider à naviguer sur ce site. Clique sur le bouton en bas, et demande moi de naviguer sur une page.` : '');
     const synth = window.speechSynthesis;
     const voices = synth.getVoices()
