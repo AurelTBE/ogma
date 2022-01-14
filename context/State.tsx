@@ -1,4 +1,4 @@
-import React, { createContext, ReactChildren, useState } from 'react'
+import React, { createContext, ReactElement, useState } from 'react'
 
 interface ContextState {
     transcript: string,
@@ -14,7 +14,7 @@ interface ContextState {
 export const State = createContext({} as ContextState)
 
 
-export const StateProvider = ({children}: {children:ReactChildren}) => {
+export const StateProvider = ({children}: {children:ReactElement}) => {
     const [activePage, setActivePage] = useState<string>("")
     const [transcript, setTranscript] = useState<string>("")
     const [commandUrl, setCommandUrl] = useState<string>("")

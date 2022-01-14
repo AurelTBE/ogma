@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import { useContext } from "react"
+import { useState, useEffect, useContext } from 'react'
 import { State } from "../context/State"
 
 interface IProps {
