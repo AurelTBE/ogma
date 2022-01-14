@@ -18,11 +18,12 @@ const Assistant = () => {
 
     const commands = [
         {
-            command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", 
+            command: ["*", "va sur *", "va sur les *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", 
             "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", 
             "Clic *", "Sélectionner *", "Sélectionne *", "Navigue sur *", "Navigue vers *", "Navigue à *", "Sélection *", 
             "Montre *", "Montrer *", "Montre les *", "Montre-moi *", "Montre-moi les *", "Affiche *", "Affiche-moi *", 
-            "Affiche les *", "Affiche-moi les *"],
+            "Affiche les *", "Affiche-moi les *", "amène-moi sur *", "amène-moi sur les *", "amène-moi à *", 
+            "ramène-moi sur *", "ramène-moi à *", "retour *"],
             callback: (redirectPage: string) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
@@ -43,7 +44,7 @@ const Assistant = () => {
     ]
     const { transcript } = useSpeechRecognition({commands})
 
-    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "Actu", "actualité", "actualités", "projets", "projet", "stop"]
+    const pages = ["accueil", "Accueil", "l'accueil", "actus", "actu", "Actu", "Actus", "l'actu", "actualité", "actualités", "projets", "projet", "les projets", "stop"]
 
     const urls: {[key: string]: string} = {
         accueil: "/",
@@ -52,10 +53,13 @@ const Assistant = () => {
         actus: "/actus",
         actu: "/actus",
         Actu: "/actus",
+        Actus: "/actus",
+        "l'actu": "/actus",
         actualité: "/actus",
         actualités: "/actus",
         projets: "/projets",
         projet: "/projets",
+        "les projets": "/projets",
         stop: "#"
     }
 
