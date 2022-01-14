@@ -21,8 +21,8 @@ const Assistant = () => {
             command: ["*", "va sur *", "Aller sur *", "Aller à *", "Ouvrir *", "Accéder à *", "Retourner sur *", 
             "Retourner a *", "Retour à *", "Retourne sur *", "Retourne à * ", "retourne à *", "Go sur *", "Clic sur *", 
             "Clic *", "Sélectionner *", "Sélectionne *", "Navigue sur *", "Navigue vers *", "Navigue à *", "Sélection *", 
-            "Montre *", "Montrer *", "Montre les *", "Montre moi *", "Montre moi les *", "Affiche *", "Affiche moi *", 
-            "Affiche les *", "Affiche moi les *"],
+            "Montre *", "Montrer *", "Montre les *", "Montre-moi *", "Montre-moi les *", "Affiche *", "Affiche-moi *", 
+            "Affiche les *", "Affiche-moi les *"],
             callback: (redirectPage: string) => (
                 setredirectUrl(redirectPage),
                 handleUrl(redirectPage)
